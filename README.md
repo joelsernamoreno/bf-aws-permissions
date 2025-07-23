@@ -13,6 +13,23 @@ This can have false negatives, but it's the **easiest approach to check want you
 **Improvements TODO**
 - *Some actions require specific ARNs from the account in 1 or more params, so generating a random ARN that fullfil the ARN regex and checking if the error says that the user doesn't have permission to that random data or that the data just doesn't exist but the user could have access could indicate access over the action*
 
+## ⏱ Prerequisite: `timeout` via `coreutils`
+
+This script requires the `timeout` command (from `coreutils`) to safely limit how long AWS CLI commands run.  
+Without it, the script will exit with:
+`Command timeout not installed. It’s required.`
+<img width="2752" height="134" alt="image" src="https://github.com/user-attachments/assets/3d935e23-1907-4599-ae38-6e470375e38c" />
+
+### If you’re on a Debian/Ubuntu VM or Docker container:
+```bash
+sudo apt install coreutils
+```
+
+### On macOS with Homebrew:
+```bash
+brew install coreutils
+```
+
 ## Quick start
 ```bash
 # Remember to set the region in the profile
