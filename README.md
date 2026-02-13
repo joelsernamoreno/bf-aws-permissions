@@ -1,5 +1,3 @@
-# Check AWSPEASS from [https://github.com/carlospolop/cloudpeass](https://github.com/carlospolop/cloudpeass) for an updated version of this script
-
 # Brute Force AWS Permissions
 
 The script will first try to **enumerate your permissions querying the IAM service**, and then give you the options to brute force permissions.
@@ -36,8 +34,6 @@ brew install coreutils
 bash bf-aws-permissions.sh -p "<profile-name>" -r <region>
 # BF only the 10 services most used according to GPT4
 bash bf-aws-permissions.sh -p "<profile-name>" -r us-east-1 -s 's3|ec2|lambda|rds|sns|sqs|cloudwatch|cloudfront|iam|dynamodb'
-# Skip initial checks and go straight to BF
-bash bf-aws-permissions.sh -p "<profile-name>" -r us-east-1 -s 's3|ec2|lambda|rds|sns|sqs|cloudwatch|cloudfront|iam|dynamodb' -b
 
 # For temp creds use:
 aws configure set aws_session_token <token>
